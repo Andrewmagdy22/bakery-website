@@ -1,0 +1,345 @@
+@use "sass:color";
+
+$primary-color: #c17f4e;
+$dark-color: #2d2420;
+$light-color: #faf6f1;
+$white:  #ffffff;
+$cream: #f4e9dc;
+
+$font-main: 'poppins', sans-serif;
+$font-heading: 'playfair Display', serif;
+
+@mixin flex-center($direction: row) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: center;
+    align-items: center;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: $font-main;
+    color: $dark-color;
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 60px;
+    background-color: $white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+
+ .logo{
+    font-family: $font-heading;
+    font-size: 24px;
+    font-weight: 700;
+    color: $primary-color;
+
+ }
+ .nav-links{
+    display: flex;
+    list-style: none;
+    gap: 35px;
+
+    li a{
+        text-decoration: none;
+        color: $dark-color;
+        font-weight: 600;
+        font-size: 15px;
+        transition: 0.3s;
+
+        &:hover{
+            color: $primary-color;
+        }
+    }
+ }
+
+}
+.hero {
+    height: 100vh;
+    background-image: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)), url('https://images.unsplash.com/photo-1561406186-9fe502481035?fm=jpg&q=80&w=1920&auto=format&fit=crop');
+    background-size: cover;
+    background-position: center;
+    @include flex-center;
+
+    .hero-overlay {
+        text-align: center;
+        color: $white;
+        max-width: 700px;
+        padding: 0 20px;
+
+        h1 {
+            font-family: $font-heading;
+            font-size: 56px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+    }
+
+    .hero-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+    }
+}
+
+.btn-primary {
+    display: inline-block;
+    background-color: $primary-color;
+    color: $white;
+    text-decoration: none;
+    padding: 14px 32px;
+    border-radius: 4px;
+    font-weight: 600;
+    transition: 0.3s;
+
+    &:hover {
+        background-color: color.adjust($primary-color, $lightness: -10%);
+    }
+}
+
+.btn-outline {
+    display: inline-block;
+    background-color: transparent;
+    color: $white;
+    border: 2px solid $white;
+    text-decoration: none;
+    padding: 12px 30px;
+    border-radius: 4px;
+    font-weight: 600;
+    transition: 0.3s;
+
+    &:hover {
+        background-color: $white;
+        color: $dark-color;
+    }
+}
+
+
+.about{
+    @include flex-center;
+    gap:60px;
+    padding: 100px 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+
+.about-image{
+    flex: 1;
+    
+        img{
+width: 100%;
+border-radius: 8px;
+display: block;
+        }
+    }
+
+
+    .about-content{
+        flex: 1;
+        h2{
+            font-family: $font-heading;
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: $dark-color;
+        }
+        p{
+            color: #6b5d52;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+        ul{
+            list-style: none;
+
+            li{
+                padding-right: 25px;
+                position: relative;
+                margin-bottom: 12px;
+                color: #6b5d52;
+
+                &::before{
+                    content: "✓";
+                    position: absolute;
+                    right: 0;
+                    color: $primary-color;
+                    font-weight: 700;
+                }
+            }
+        }
+    }
+}
+
+
+.baking{
+    text-align: center;
+    padding: 100px 60px;
+    background-color: $light-color;
+
+    h2{
+        font-family: $font-heading;
+        font-size: 36px;
+        margin-bottom: 50px;
+        color: $dark-color;
+    }
+    .baking-grid{
+        @include flex-center;
+        gap: 30px;
+        flex-wrap: wrap;
+        align-items: stretch;
+        }
+        .baking-card{
+            background-color: $white;
+            border-radius: 8px;
+            overflow: hidden;
+            width: 320px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            transition: 0.3s;
+
+            &:hover{
+                transform: translateY(-8px);
+            }
+
+            img{
+                width: 100%;
+                height: 220px;
+                object-fit: cover;
+                display: block;
+            }
+            h3{
+                font-family: $font-heading;
+                font-size: 22px;
+                margin: 20px 0 10px;
+                color: $dark-color;
+            }
+            p{
+                color: #6b5d52;
+                line-height: 1.6;
+                padding: 0 20px 25px;
+            }
+
+        }
+}
+
+
+
+.gallery{
+    text-align: center;
+    padding: 100px 60px;
+
+    h2{
+        font-family: $font-heading;
+        font-size: 36px;
+        margin-bottom: 50px;
+        color: $dark-color;
+    }
+    .gallery-grid{
+        @include flex-center;
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+    .gallery-item{
+        width: 260px;
+        height: 260px;
+        overflow: hidden;
+        border-radius: 6px;
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: 0.4s;
+
+            &:hover{
+                transform: scale(1.1);
+            }
+        }
+    }
+}
+
+
+.footer {                                           
+    background-color: $dark-color;
+    color: $white;
+    padding: 60px 60px 20px;
+
+    .footer-content {                              
+        @include flex-center;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        gap: 40px;
+        max-width: 1100px;
+        margin: 0 auto;
+        text-align: right;
+    }                                                
+
+    .footer-about {                                  
+        max-width: 280px;
+
+        h3 {                                          
+            font-family: $font-heading;
+            font-size: 22px;
+            margin-bottom: 12px;
+            color: $white;
+        }                                             
+
+        p {                                          
+            color: #b8ada3;
+            line-height: 1.6;
+        }                                             
+    }                                                 
+
+    .footer-hours,
+    .footer-contact {                                
+        h4 {                                         
+            font-size: 16px;
+            margin-bottom: 15px;
+            color: $white;
+        }                                            
+
+        p {                                           
+            color: #b8ada3;
+            margin-bottom: 8px;
+        }                                             
+    }                                                
+
+    .footer-bottom {                               
+        text-align: center;
+        margin-top: 40px;
+        padding-top: 20px;
+        border-top: 1px solid #4a4038;
+
+        p {                                          
+            color: #b8ada3;
+            font-size: 14px;
+        }                                            
+    }                                                
+
+}                                                    
+
+
+
+
+
+
+
+
+
+
+
+
