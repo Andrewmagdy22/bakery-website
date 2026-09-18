@@ -330,7 +330,54 @@ display: block;
         }                                            
     }                                                
 
-}                                                    
+}                   
+
+
+@media (max-width: 768px) {
+
+    .navbar {
+        padding: 15px 20px;
+        flex-direction: column;
+        gap: 15px;
+
+        .nav-links {
+            gap:15px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+    }
+    .hero{
+        .hero-overlay{
+            h1{
+                font-size: 32px;
+            }
+        }
+        .hero-buttons {
+            flex-direction: column;
+            width: 100%;
+            padding: 0 20px;
+        }
+    }
+    .about {
+        flex-direction: column;
+        padding: 60px 20px;
+    }
+    .baking-card,
+    .price-card,
+    .testimonial-card {
+        width: 100%;
+        max-width: 320px;
+    }
+    .gallery-item {
+        width: 100%;
+        max-width: 320px;
+        height: 220px;
+    }
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+}
 
 
 
