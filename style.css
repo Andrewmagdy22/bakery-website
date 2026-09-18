@@ -5,9 +5,14 @@
   box-sizing: border-box;
 }
 
-body {
-  font-family: "poppins", sans-serif;
-  color: #2d2420;
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+img {
+  max-width: 100%;
+  display: block;
 }
 
 .navbar {

@@ -16,16 +16,21 @@ $font-heading: 'playfair Display', serif;
     align-items: center;
 }
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
 
-body{
-    font-family: $font-main;
-    color: $dark-color;
-}
+    html,body{
+    overflow-x: hidden;
+    width: 100%;
+    }
+
+    img{
+        max-width: 100%;
+        display: block;
+    }
 
 .navbar{
     display: flex;
