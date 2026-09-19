@@ -12,7 +12,13 @@
 <body>
     <nav class="navbar">
         <div class="logo">Family Bakery</div>
-        <ul class="nav-links">
+        <div class="menu-toggle" id="menuToggle">
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </div>
+        <ul class="nav-links" id="navlinks">
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#offer">Our Offer</a></li>
@@ -121,6 +127,14 @@
     </div>
 </footer>
     
+<script>
+    const menuToggle = document.getElementById("menuToggle");
+    const navlinks = document.getElementById("navlinks");
 
+    menuToggle.addEventListener("click", () =>{
+        navlinks.classList.toggle("active");
+    });
+    
+</script>
 </body>
 </html>
